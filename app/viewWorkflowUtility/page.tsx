@@ -7,8 +7,13 @@ import api from "@/src/services/api";
 
 export default function ViewWorkflowPage() {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+//   const id = searchParams.get("id");
+  const [id, setId] = useState<string | null>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    setId(searchParams.get("id"));
+  }, [searchParams]);
 
   const [wf, setWf] = useState<any>(null);
   const [users, setUsers] = useState<any[]>([]);
