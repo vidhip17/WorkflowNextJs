@@ -112,7 +112,16 @@ export default function HomePage() {
                       >
                         Edit
                       </button>
-                    )}
+                    )} | 
+                    <button
+                        onClick={() =>
+                          router.push(`/WorkflowActionPage?instanceId=${leave.id}`)
+                        }
+                        className="text-blue-600 hover:underline"
+                      > 
+                        Action
+                      </button>
+                    
                   </td>
                 </tr>
               ))}
